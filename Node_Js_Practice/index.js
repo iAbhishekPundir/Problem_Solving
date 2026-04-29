@@ -63,5 +63,16 @@ for (let i = 0; i < products.length; i++) {
 }
 */
 
+//Problem 4: Arrays
 
+const guesList = ["Alice", "Bob", "Charlie", "David", "Eve"];
+
+const guestName = require("prompt-sync")();
+const name = guestName("Please enter the name of the guest: ");
+
+if (guesList.includes(name)) { 
+    console.log("Welcome, " + name + "!");``
+ } else {
+    console.log("Sorry, " + name + ", you are not on the guest list.");
+ }
 
