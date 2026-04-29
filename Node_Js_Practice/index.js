@@ -25,8 +25,8 @@ else if (inputAge >= 65) {
 /*
 const input1 = require("prompt-sync")();
 const input2 = require("prompt-sync")();    
-const length = input1('Please provide the length of the rectangle:');
-const breadth = input2('Please provide the breadth of the rectangle:');
+const length = parseFloat(input1('Please provide the length of the rectangle:'));
+const breadth = parseFloat(input2('Please provide the breadth of the rectangle:'));
 const areaOfRectangle = length * breadth;
 console.log("Area of rectangle is: " + areaOfRectangle);
 */
@@ -65,14 +65,27 @@ for (let i = 0; i < products.length; i++) {
 
 //Problem 4: Arrays
 
-const guesList = ["Alice", "Bob", "Charlie", "David", "Eve"];
+// const guesList = ["Alice", "Bob", "Charlie", "David", "Eve"];
 
-const guestName = require("prompt-sync")();
-const name = guestName("Please enter the name of the guest: ");
+// const guestName = require("prompt-sync")();
+// const name = guestName("Please enter the name of the guest: ");
 
-if (guesList.includes(name)) { 
-    console.log("Welcome, " + name + "!");``
- } else {
-    console.log("Sorry, " + name + ", you are not on the guest list.");
- }
+// if (guesList.includes(name)) {
+//   console.log("Welcome, " + name + "!");
+//   ``;
+// } else {
+//   console.log("Sorry, " + name + ", you are not on the guest list.");
+// }
 
+//Problem 5: JSON (JavaScript Object Notation)
+
+const weatherData = {
+  location: "New York",
+  temperature: 25,
+  humidity: 60,
+  description: "Partly cloudy",
+};
+console.log(weatherData.location);
+console.log(weatherData.temperature);
+console.log(weatherData.humidity);
+console.log(weatherData.description);
