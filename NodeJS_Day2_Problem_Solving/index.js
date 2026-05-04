@@ -51,19 +51,36 @@ const { log } = require('console');
 // console.log(`Invalid operation: ${result6}`);
 
 //Problem 4: Using the fs module, create a method to read a file and display its contents in the console.
-const fs = require('fs');
+// const fs = require('fs');
 
 // const notesContent = fs.readFileSync('notes.txt', 'utf-8');
 // console.log("Contents of notes.txt:");
 // console.log(notesContent);
 
-const notesContent = fs.readFile('notes.txt', 'utf-8', (err, data) => {
-    if (err) {
-        log("Error reading file:", err);
-        return
-    }
-    console.log("Contents of notes.txt:");
-    console.log(data);
-})
+// const notesContent = fs.readFile('notes.txt', 'utf-8', (err, data) => {
+//     if (err) {
+//         log("Error reading file:", err);
+//         return
+//     }
+//     console.log("Contents of notes.txt:");
+//     console.log(data);
+// })
+
+//Problem 5: Create a Node.js program that uses the os module to display the following information about the operating system:
+// - OS type
+// - OS platform
+// - OS architecture
+// - Total memory
+// - Free memory
+// - Number of CPU cores
+
+const os = require('os');   
+console.log("Operating System Information:");
+console.log(`OS Type: ${os.type()}`);
+console.log(`OS Platform: ${os.platform()}`);   
+console.log(`OS Architecture: ${os.arch()}`);
+console.log(`Total Memory: ${os.totalmem()} bytes`);
+console.log(`Free Memory: ${os.freemem()} bytes`);
+console.log(`Number of CPU Cores: ${os.cpus().length}`);
 
 
