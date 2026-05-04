@@ -74,13 +74,18 @@ const { log } = require('console');
 // - Free memory
 // - Number of CPU cores
 
-const os = require('os');   
-console.log("Operating System Information:");
-console.log(`OS Type: ${os.type()}`);
-console.log(`OS Platform: ${os.platform()}`);   
-console.log(`OS Architecture: ${os.arch()}`);
-console.log(`Total Memory: ${os.totalmem()} bytes`);
-console.log(`Free Memory: ${os.freemem()} bytes`);
-console.log(`Number of CPU Cores: ${os.cpus().length}`);
+// const os = require('os');   
+// console.log("Operating System Information:");
+// console.log(`OS Type: ${os.type()}`);
+// console.log(`OS Platform: ${os.platform()}`);   
+// console.log(`OS Architecture: ${os.arch()}`);
+// console.log(`Total Memory: ${os.totalmem()} bytes`);
+// console.log(`Free Memory: ${os.freemem()} bytes`);
+// console.log(`Number of CPU Cores: ${os.cpus().length}`);
 
 
+// Problem 6 : use losash 
+const _ = require('lodash');
+const numbers = [1, 2, 3, 4, 5];
+const sum = _.sumBy(numbers, (num) => num);
+console.log(`The sum of the numbers is: ${sum}`);
