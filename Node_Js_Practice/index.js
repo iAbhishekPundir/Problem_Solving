@@ -85,6 +85,7 @@ const weatherData = {
   humidity: 60,
   description: "Partly cloudy",
 };
+
 console.log(weatherData.location);
 console.log(weatherData.temperature);
 console.log(weatherData.humidity);
