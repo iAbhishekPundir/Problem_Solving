@@ -1,29 +1,50 @@
 console.log("Day 5 solution");
-// Print All Factors of a Number
+//1.Print All Factors of a Number
 
 // Input: N = 24
 // Output: [1, 2, 3, 4, 6, 8, 12, 24]
 
-const findFactors = (num) => {
-  const smallFactors = [];
-  const bigFactors = [];
-  const limit = Math.sqrt(num);
-  for (let i = 1; i <= limit; i++) {
-    if (num % i === 0) {
-      smallFactors.push(i);
-      const pair = num/i;
-      if (i !== pair) {
-        bigFactors.push(pair);
-      }
+// const findFactors = (num) => {
+//   const smallFactors = [];
+//   const bigFactors = [];
+//   const limit = Math.sqrt(num);
+//   for (let i = 1; i <= limit; i++) {
+//     if (num % i === 0) {
+//       smallFactors.push(i);
+//       const pair = num/i;
+//       if (i !== pair) {
+//         bigFactors.push(pair);
+//       }
+//     }
+//   }
+//   return smallFactors.concat(bigFactors.reverse());
+// };
+
+// const result = findFactors(24);
+// console.log("result: ", result);
+
+//2.Print All Multiples of a Number up to N
+
+// Input: Number = 4, Limit = 30
+// Output: [4, 8, 12, 16, 20, 24, 28]
+
+const findMultiplesUptoN = (num, limit) => {
+  const factors = [];
+  let counter = 0;
+  for (let i = 1; i <= Math.floor(limit/num); i++) {
+    counter++;
+    let calculatedFactor = num * i;
+    if (calculatedFactor <= limit) {
+      factors.push(calculatedFactor);
     }
   }
-  return smallFactors.concat(bigFactors.reverse());
+  console.log("counter: ", counter);
+  return factors;
 };
-
-const result = findFactors(24);
+const result = findMultiplesUptoN(4, 80);
 console.log("result: ", result);
 
-// find the HCF (Highest Common Factor) or GCD of Two Numbers
+//3. find the HCF (Highest Common Factor) or GCD of Two Numbers
 
 // Input: 12, 18
 // Output: HCF = 6
