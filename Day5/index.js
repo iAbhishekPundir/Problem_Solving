@@ -97,20 +97,44 @@ console.log("Day 5 solution");
 // Input: N = 24
 // Output: 8 Factors
 
-const findTotalNumberOfFactors = (num) => {
-  let counter = 0;
+// const findTotalNumberOfFactors = (num) => {
+//   let counter = 0;
+//   const limit = Math.sqrt(num);
+//   for (let i = 1; i <= limit; i++) {
+//     if (num % i === 0) {
+//       counter++;
+//       const pair = num / i;
+//       if (i !== pair) {
+//         counter++;
+//       }
+//     }
+//   }
+//   return counter;
+// };
+
+// const result = findTotalNumberOfFactors(24);
+// console.log("result: ", result);
+
+// 2.Sum of All Factors of a Number
+
+// Input: N = 12
+// Output: Sum = 28
+
+
+const sumOfAllFactors = (num) => {
+let sum = 0;
   const limit = Math.sqrt(num);
   for (let i = 1; i <= limit; i++) {
     if (num % i === 0) {
-      counter++;
-      const pair = num / i;
+      sum+=i;
+      const pair = num/i;
       if (i !== pair) {
-        counter++;
+        sum+=pair;
       }
     }
   }
-  return counter;
+  return sum;
 };
 
-const result = findTotalNumberOfFactors(24);
+const result = sumOfAllFactors(12); 
 console.log("result: ", result);
