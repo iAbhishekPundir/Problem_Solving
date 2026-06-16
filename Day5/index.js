@@ -28,23 +28,24 @@ console.log("Day 5 solution");
 // Input: Number = 4, Limit = 30
 // Output: [4, 8, 12, 16, 20, 24, 28]
 
-const findMultiplesUptoN = (num, limit) => {
-  const factors = [];
-  let counter = 0;
-  for (let i = 1; i <= Math.floor(limit/num); i++) {
-    counter++;
-    let calculatedFactor = num * i;
-    if (calculatedFactor <= limit) {
-      factors.push(calculatedFactor);
-    }
-  }
-  console.log("counter: ", counter);
-  return factors;
-};
-const result = findMultiplesUptoN(4, 80);
-console.log("result: ", result);
+// const findMultiplesUptoN = (num, limit) => {
+//   const factors = [];
+//   let counter = 0;
+//   for (let i = 1; i <= Math.floor(limit/num); i++) {
+//     counter++;
+//     let calculatedFactor = num * i;
+//     if (calculatedFactor <= limit) {
+//       factors.push(calculatedFactor);
+//     }
+//   }
+//   console.log("counter: ", counter);
+//   return factors;
+// };
+// const result = findMultiplesUptoN(4, 80);
+// console.log("result: ", result);
 
-//3. find the HCF (Highest Common Factor) or GCD of Two Numbers
+
+//3.Find the HCF (Highest Common Factor) or GCD of Two Numbers
 
 // Input: 12, 18
 // Output: HCF = 6
@@ -68,3 +69,18 @@ console.log("result: ", result);
 
 // const result1 = findHCF(15, 45);
 // console.log("result1: ", result1);
+
+
+// 4.Find the LCM (Least Common Multiple) of Two Numbers
+
+// Input: 12, 18
+// Output: LCM = 36
+
+
+
+
+
+
+
+
+
