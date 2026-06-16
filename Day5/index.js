@@ -74,18 +74,43 @@ console.log("Day 5 solution");
 // Input: 12, 18
 // Output: LCM = 36
 
-const findLCM = (a, b) => {
+// const findLCM = (a, b) => {
+//   let counter = 0;
+//   const largest = a > b ? a : b;
+//   const smallest = a < b ? a : b;
+//   for (let i = 1; i <= smallest; i++) {
+//     counter++;
+//     if ((largest * i) % smallest === 0) {
+//       console.log(counter);
+//       return largest * i;
+//     }
+//   }
+// };
+
+// const result = findLCM(12, 18);
+// console.log("result: ", result);
+
+// ********. HOMEWORK ********
+
+//1. Count the Total Number of Factors of a Number
+
+// Input: N = 24
+// Output: 8 Factors
+
+const findTotalNumberOfFactors = (num) => {
   let counter = 0;
-  const largest = a > b ? a : b;
-  const smallest = a < b ? a : b;
-  for (let i = 1; i <= smallest; i++) {
-    counter++;
-    if ((largest * i) % smallest === 0) {
-      console.log(counter);
-      return largest * i;
+  const limit = Math.sqrt(num);
+  for (let i = 1; i <= limit; i++) {
+    if (num % i === 0) {
+      counter++;
+      const pair = num / i;
+      if (i !== pair) {
+        counter++;
+      }
     }
   }
+  return counter;
 };
 
-const result = findLCM(12, 18);
+const result = findTotalNumberOfFactors(24);
 console.log("result: ", result);
