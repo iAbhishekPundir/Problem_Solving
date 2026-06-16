@@ -143,17 +143,43 @@ console.log("Day 5 solution");
 // Input: N = 36
 // Output: 18
 
-const findGreatestFactor = (num) => {
-  if (num <= 1) return null;
+// const findGreatestFactor = (num) => {
+//   if (num <= 1) return null;
 
-  for (let i = 2; i <= Math.sqrt(num); i++) {
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) {
+//       return num / i;
+//     }
+//   }
+
+//   return 1;
+// };
+
+// const result = findGreatestFactor(36);
+// console.log("result: ", result);
+
+// 4.Check if a Number is a Perfect Number
+
+// Input: N = 28
+// Output: Perfect Number
+// If sum of all proper divisors = number → Perfect Number.
+
+const findPerfectNumber = (num) => {
+  if (num <= 1) return false;
+  let sum = 1;
+  const limit = Math.sqrt(num);
+  for (let i = 2; i <= limit; i++) {
     if (num % i === 0) {
-      return num / i;
+      sum += i;
+      const pair = num / i;
+      if (i !== pair) {
+        sum += pair;
+      }
     }
   }
-
-  return 1;
+  console.log(sum);
+  return sum === num;
 };
 
-const result = findGreatestFactor(36);
+const result = findPerfectNumber(28); // 1, 2 , 4, 7, 28
 console.log("result: ", result);
