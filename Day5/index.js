@@ -44,7 +44,6 @@ console.log("Day 5 solution");
 // const result = findMultiplesUptoN(4, 80);
 // console.log("result: ", result);
 
-
 //3.Find the HCF (Highest Common Factor) or GCD of Two Numbers
 
 // Input: 12, 18
@@ -70,17 +69,23 @@ console.log("Day 5 solution");
 // const result1 = findHCF(15, 45);
 // console.log("result1: ", result1);
 
-
 // 4.Find the LCM (Least Common Multiple) of Two Numbers
 
 // Input: 12, 18
 // Output: LCM = 36
 
+const findLCM = (a, b) => {
+  let counter = 0;
+  const largest = a > b ? a : b;
+  const smallest = a < b ? a : b;
+  for (let i = 1; i <= smallest; i++) {
+    counter++;
+    if ((largest * i) % smallest === 0) {
+      console.log(counter);
+      return largest * i;
+    }
+  }
+};
 
-
-
-
-
-
-
-
+const result = findLCM(12, 18);
+console.log("result: ", result);
