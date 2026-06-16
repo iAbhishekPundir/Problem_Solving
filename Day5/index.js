@@ -49,19 +49,19 @@ console.log("Day 5 solution");
 // Input: 12, 18
 // Output: HCF = 6
 
-// const findHCF = (a, b) => {
-//     let divisor = a < b ? a : b; // 12
-//     let dividend = a > b ? a : b; // 18
+const findHCF = (a, b) => {
+  let divisor = a < b ? a : b; // 12
+  let dividend = a > b ? a : b; // 18
 
-//     while (dividend % divisor !==0) {
-//         console.log("dividend % divisor : ", dividend % divisor );
-//         let remainder = dividend % divisor;
-//         console.log("dividend / divisor: ", dividend % divisor);
-//         dividend = divisor;
-//         divisor  = remainder;
-//     }
-//     return divisor;
-// }
+  while (dividend % divisor !== 0) {
+    console.log("dividend % divisor : ", dividend % divisor);
+    let remainder = dividend % divisor;
+    console.log("dividend / divisor: ", dividend % divisor);
+    dividend = divisor;
+    divisor = remainder;
+  }
+  return divisor;
+};
 
 // const result = findHCF(12, 24);
 // console.log("result: ", result);
@@ -74,18 +74,18 @@ console.log("Day 5 solution");
 // Input: 12, 18
 // Output: LCM = 36
 
-// const findLCM = (a, b) => {
-//   let counter = 0;
-//   const largest = a > b ? a : b;
-//   const smallest = a < b ? a : b;
-//   for (let i = 1; i <= smallest; i++) {
-//     counter++;
-//     if ((largest * i) % smallest === 0) {
-//       console.log(counter);
-//       return largest * i;
-//     }
-//   }
-// };
+const findLCM = (a, b) => {
+  let counter = 0;
+  const largest = a > b ? a : b;
+  const smallest = a < b ? a : b;
+  for (let i = 1; i <= smallest; i++) {
+    counter++;
+    if ((largest * i) % smallest === 0) {
+      console.log(counter);
+      return largest * i;
+    }
+  }
+};
 
 // const result = findLCM(12, 18);
 // console.log("result: ", result);
@@ -164,22 +164,37 @@ console.log("Day 5 solution");
 // Output: Perfect Number
 // If sum of all proper divisors = number → Perfect Number.
 
-const findPerfectNumber = (num) => {
-  if (num <= 1) return false;
-  let sum = 1;
-  const limit = Math.sqrt(num);
-  for (let i = 2; i <= limit; i++) {
-    if (num % i === 0) {
-      sum += i;
-      const pair = num / i;
-      if (i !== pair) {
-        sum += pair;
-      }
-    }
-  }
-  console.log(sum);
-  return sum === num;
-};
+// const findPerfectNumber = (num) => {
+//   if (num <= 1) return false;
+//   let sum = 1;
+//   const limit = Math.sqrt(num);
+//   for (let i = 2; i <= limit; i++) {
+//     if (num % i === 0) {
+//       sum += i;
+//       const pair = num / i;
+//       if (i !== pair) {
+//         sum += pair;
+//       }
+//     }
+//   }
+//   console.log(sum);
+//   return sum === num;
+// };
 
-const result = findPerfectNumber(28); // 1, 2 , 4, 7, 28
-console.log("result: ", result);
+// const result = findPerfectNumber(28); // 1, 2 , 4, 7, 28
+// console.log("result: ", result);
+
+// Find the HCF and LCM of Three Numbers
+
+// Input: 8, 12, 16
+// Output: HCF = 4, LCM = 48
+
+hcf = findHCF(8, 12);
+
+hcf = findHCF(hcf, 16);
+
+lcm = findLCM(8, 12);
+
+lcm = findLCM(lcm, 16);
+console.log("hcf: ", hcf);
+console.log("lcm: ", lcm);
