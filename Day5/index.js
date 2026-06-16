@@ -120,21 +120,40 @@ console.log("Day 5 solution");
 // Input: N = 12
 // Output: Sum = 28
 
+// const sumOfAllFactors = (num) => {
+// let sum = 0;
+//   const limit = Math.sqrt(num);
+//   for (let i = 1; i <= limit; i++) {
+//     if (num % i === 0) {
+//       sum+=i;
+//       const pair = num/i;
+//       if (i !== pair) {
+//         sum+=pair;
+//       }
+//     }
+//   }
+//   return sum;
+// };
 
-const sumOfAllFactors = (num) => {
-let sum = 0;
-  const limit = Math.sqrt(num);
-  for (let i = 1; i <= limit; i++) {
+// const result = sumOfAllFactors(12);
+// console.log("result: ", result);
+
+// 3.Find the Greatest Factor of a Number (Other Than Itself)
+
+// Input: N = 36
+// Output: 18
+
+const findGreatestFactor = (num) => {
+  if (num <= 1) return null;
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) {
-      sum+=i;
-      const pair = num/i;
-      if (i !== pair) {
-        sum+=pair;
-      }
+      return num / i;
     }
   }
-  return sum;
+
+  return 1;
 };
 
-const result = sumOfAllFactors(12); 
+const result = findGreatestFactor(36);
 console.log("result: ", result);
